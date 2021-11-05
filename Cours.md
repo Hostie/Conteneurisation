@@ -19,7 +19,7 @@ build = créer une archive
 tag = nom image
 docker run = lancer
 
-
+-------  docker run -(d) -p 8000:80 -v pwd/conf:nginxconf -v pwd/html:html       -------------
 
 https://vsupalov.com/docker-arg-env-variable-guide/
 
@@ -33,5 +33,10 @@ ENV est dans RUN
 docker exec-it = rentre dans le transport
 
 
+Scalabilité : gestion de la montée en charge
+
+
+Registry (DOckerHub) : passage d'environnement de DEV en local à un environnement de prod avec une image buildée 
+CI/CD : Continuous integration - Continuous Deploy
 
 
