@@ -1,0 +1,13 @@
+ARG VERSION=3.13
+FROM alpine:$VERSION as builder 
+ARG VERSION
+ENV MSG "Caca"
+RUN apk update && apk upgrade && apk add bash
+WORKDIR /opt
+RUN echo "$VERSION Test" > /messages.txt 
+
+
+FROM alpine:$VERSION 
+WORKDIR /opt
+COPY --from=builder /messages.txt /opt/new-message.txt 
+CMD ["cat", "/opt/new-message.txt"]
